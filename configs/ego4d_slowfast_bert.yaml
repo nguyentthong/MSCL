@@ -1,0 +1,53 @@
+data:
+  dataset: ego4d
+  anno_dir: data/ego4d/annotations
+  video_feat_dir: data/ego4d/features/slowfast
+  text_feat_dir: data/ego4d/features/bert
+  video_feat_dim: 2304   # SlowFast (slow 2048 + fast 256)
+  text_feat_dim: 768     # BERT
+  max_video_len: 2304
+  max_query_len: 32
+  feature_stride: 1.0
+  num_workers: 4
+
+model:
+  hidden_dim: 256
+  num_heads: 4
+  num_layers: 6
+  window_size: 19
+  downsample_rate: 2
+  dropout: 0.0
+  text_encoder_layers: 2
+  head_layers: 3
+  head_kernel_size: 3
+
+loss:
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+  rho_reg: 1.0
+  rho_within: 1.0
+  rho_cross: 1.0
+  center_sampling_alpha: 1.5
+  temperature: 1.0
+
+train:
+  epochs: 30
+  batch_size: 2
+  lr: 0.0001
+  weight_decay: 0.05
+  warmup_epochs: 5
+  grad_clip: 1.0
+  amp: true
+  val_interval: 1
+  save_dir: checkpoints/ego4d_sf_bert
+  log_interval: 50
+  seed: 42
+
+eval:
+  batch_size: 4
+  recall_k: [1, 5]
+  tiou_thresholds: [0.3, 0.5]
+  nms_sigma: 0.5
+  nms_threshold: 0.001
+  max_predictions: 200
+  pre_nms_topk: 2000

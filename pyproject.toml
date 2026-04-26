@@ -1,0 +1,33 @@
+[project]
+name = "mscl-vtg"
+version = "0.1.0"
+description = "Multi-Scale Contrastive Learning for Video Temporal Grounding"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "torch>=2.1.0",
+    "einops>=0.7.0",
+    "pyyaml>=6.0",
+    "pydantic>=2.0",
+    "tqdm>=4.66",
+    "numpy>=1.24",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mscl_vtg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
