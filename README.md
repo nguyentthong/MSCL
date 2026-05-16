@@ -200,10 +200,13 @@ All assumptions are marked with `TODO` or `NOTE` comments in the code for easy m
 ## Citation
 
 ```bibtex
-@inproceedings{nguyen2025mscl,
-  title={Multi-Scale Contrastive Learning for Video Temporal Grounding},
-  author={Nguyen, Thong Thanh and Bin, Yi and Wu, Xiaobao and Hu, Zhiyuan and Nguyen, Cong-Duy and Ng, See-Kiong and Luu, Anh Tuan},
+@inproceedings{nguyen2025multi,
+  title={Multi-scale contrastive learning for video temporal grounding},
+  author={Nguyen, Thong Thanh and Bin, Yi and Wu, Xiaobao and Hu, Zhiyuan and Nguyen, Cong-Duy T and Ng, See-Kiong and Luu, Anh Tuan},
   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={6},
+  pages={6227--6235},
   year={2025}
 }
 ```
