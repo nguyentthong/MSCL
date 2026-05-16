@@ -1,4 +1,4 @@
-# MSCL-VTG: Multi-Scale Contrastive Learning for Video Temporal Grounding
+# MSCL: Multi-Scale Contrastive Learning for Video Temporal Grounding
 
 A PyTorch implementation of the method described in:
 
